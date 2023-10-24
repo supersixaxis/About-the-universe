@@ -69,7 +69,7 @@ html {
     width: 95%;
     margin-left: 50px;
     margin-top: 50px;
-    height: 170px;
+    height: 200px;
     background: url('./assets/bryan-goff-RF4p4rTM-2s-unsplash.jpg') center/cover no-repeat;
     border: 2px solid white;
     position: relative;
@@ -89,7 +89,7 @@ html {
 
 .discover_content{
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -103,6 +103,11 @@ html {
     font-size: 16px;
     padding: 10px 20px;
     text-transform: uppercase;
+    cursor: pointer;
+}
+.button:hover {
+    background-color:#588dac;
+    color: black;
 }
 
 .title {
@@ -149,7 +154,7 @@ html {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     gap: 20px;
 }
 
@@ -164,7 +169,13 @@ html {
 }
 
 .infos_content{
+    display: flex;
+    gap: 15px;
+}
 
+.infos_logo img{
+    filter: invert(54%) sepia(50%) saturate(334%) hue-rotate(158deg) brightness(86%) contrast(95%);
+    width: 50px;
 }
 
 .infos_description h2 {
@@ -172,10 +183,15 @@ html {
     font-size: 18px;
 }
 
+.infos_description p {
+    color:white;
+}
+
 .number_container h1,
 .number_container h2,
 .number_container p,
 .number_container button,
+.number_container img,
 .discover_container h1,
 .discover_container h2,
 .discover_container p,
