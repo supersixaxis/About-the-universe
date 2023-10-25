@@ -1,0 +1,81 @@
+.body_container {
+    align-items: flex-start;
+}
+
+.planet_container {
+    width: 35%;
+    height: 700px;
+    margin-left: 50px;
+    margin-top: 100px;
+    background: url('./assets/nasa-rTZW4f02zY8-unsplash.jpg') center/cover no-repeat;
+    border: 2px solid white;
+    overflow: hidden;
+    position: relative;
+}
+
+.planet_container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); /* Dégradé d'opacité */
+    z-index: 1;
+}
+
+.planet_content {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 20px 0px 20px;
+}
+.planet_content h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.planet_content h1,
+.planet_list,
+.planet_count,
+.planet_content label {
+    position: relative;
+    z-index: 2;
+}
+
+.planet_list {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.planet {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    padding: 10px 0px;
+}
+
+.planet:hover {
+    background-color: #588dac;
+}
+
+.planet_list p{
+    font-size: 18px;
+    color: white;
+}
+
+.planet_count {
+    color: white;
+    margin-top: 30px;
+}
+
+.show_infos_container {
+    width: 48%;
+    border: 2px solid white;
+    margin-top: 100px;
+    margin-left: 50px;
+    padding: 30px 10px;
+}
+
+.show_infos_container h1{
+    color: #588dac;
+}
