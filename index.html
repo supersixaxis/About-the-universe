@@ -14,24 +14,30 @@
     <header>
         <nav class="nav_bar">
             <img class="logo" src="./assets/logotype.png" alt="logo spaceX">
-            <p class="nav_p">Accueil</p>
-            <p class="nav_p">Prochaine mission</p>
+            <a href="index.html" class="nav_a link">Accueil</a>
+            <p class="nav_a">Prochaine mission</p>
         </nav>
     </header>
     <div class="body_container">
         <aside class="tab_type_container">
-            <div class="tab_type">
-                <img class="tab_logo" src="./assets/globe-solid.svg" alt="">
-                <p>Planètes</p>
-            </div>
-            <div class="tab_type">
-                <img class="tab_logo" src="./assets/rocket-solid.svg" alt="">
-                <p>Véhicules</p>
-            </div>
-            <div class="tab_type">
-                <img class="tab_logo" src="./assets/reddit-alien.svg" alt="">
-                <p>Personnes</p>
-            </div>
+            <a href="planets.html" class="link tab_type">
+                <div class="tab_type">
+                    <img class="tab_logo" src="./assets/globe-solid.svg" alt="">
+                    <p>Planètes</p>
+                </div>
+            </a>
+            <a href="" class="link tab_type">
+                <div class="tab_type">
+                    <img class="tab_logo" src="./assets/rocket-solid.svg" alt="">
+                    <p>Véhicules</p>
+                </div>
+             </a>
+             <a href="" class="link tab_type">
+                <div class="tab_type">
+                    <img class="tab_logo" src="./assets/reddit-alien.svg" alt="">
+                    <p>Personnes</p>
+                </div>
+            </a>
         </aside>
 
     
@@ -56,7 +62,7 @@
                                 </div>
                                 <div class="infos_description">
                                 <h2>Nombres d'êtres vivants recensés</h2>
-                                <p>aaaaa</p>
+                                <p id="people"></p>
                                 </div>
                              </div>
                          </div>
@@ -66,8 +72,8 @@
                                     <img src="./assets/shuttle-space-solid.svg" alt="">
                                 </div>
                                 <div class="infos_description">
-                                <h2>Nombres d'êtres vivants recensés</h2>
-                                <p></p>
+                                <h2>Nombres de véhicules recensés</h2>
+                                <p id="vehicles"></p>
                                 </div>
                              </div>
                          </div>
@@ -77,8 +83,8 @@
                                     <img src="./assets/globe-solid.svg" alt="">
                                 </div>
                                 <div class="infos_description">
-                                <h2>Nombres d'êtres vivants recensés</h2>
-                                <p></p>
+                                <h2>Nombres de planètes recensés</h2>
+                                <p id="planet"></p>
                                 </div>
                              </div>
                          </div>
@@ -88,19 +94,21 @@
                                     <img src="./assets/clock-solid.svg" alt="">
                                 </div>
                                 <div class="infos_description">
-                                <h2>Nombres d'êtres vivants recensés</h2>
-                                <p></p>
+                                <h2>Prochaine mission</h2>
+                                <p id="mission">3 janvier 2023</p>
                                 </div>
                              </div>
                          </div>
                     </div>
         </div>
+        <div class="button_container">
             <button class="button">Participer à la prochaine mission</button>
+        </div>
             </section>
         </div>
   
 
     </div>
-
+<script src="./index.js"></script>
 </body>
 </html>
