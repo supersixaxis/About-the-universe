@@ -2,11 +2,15 @@
     align-items: flex-start;
 }
 
+.blue {
+    color: #588dac;
+}
+
 .planet_container {
     width: 35%;
-    height: 700px;
+    height: 800px;
     margin-left: 50px;
-    margin-top: 100px;
+    margin-top: 50px;
     background: url('./assets/nasa-rTZW4f02zY8-unsplash.jpg') center/cover no-repeat;
     border: 2px solid white;
     overflow: hidden;
@@ -42,6 +46,25 @@
     z-index: 2;
 }
 
+
+#sort {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.searchPlanets {
+    margin: 20px 0px 0px 0px
+}
+#searchPlanets {
+    padding: 10px 20px;
+    width: 100%;
+    border: 1px solid white;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.342);
+}
+
 .planet_list {
     display: flex;
     flex-direction: column;
@@ -52,6 +75,7 @@
     justify-content: space-between;
     border-bottom: 1px solid white;
     padding: 10px 0px;
+    cursor: pointer;
 }
 
 .planet:hover {
@@ -71,11 +95,39 @@
 .show_infos_container {
     width: 48%;
     border: 2px solid white;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 50px;
     padding: 30px 10px;
 }
 
-.show_infos_container h1{
+.show_infos_h1{
     color: #588dac;
+}
+
+.show_infos_planet_container {
+   display: none;
+}
+.show_infos_planet {
+
+}
+
+.show_infos_planet h1 {
+    color: #588dac;
+}
+
+.show_planet {
+
+}
+.infos_planet {
+   
+}
+.infos_planet_description {
+
+}
+.infos_planet_description h2 {
+    color: #588dac;
+}
+
+.infos_planet_description_text {
+    color: white;
 }

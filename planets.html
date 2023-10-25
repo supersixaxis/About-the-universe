@@ -43,13 +43,13 @@
         <section class="planet_container">
             <div class="planet_content">
                 <h1>Planètes</h1>
-                <label for="">
-                    <select name="" id="" value="Par population">
-                        
+                <label for="sort">
+                    <select name="sort" id="sort">
+                        <option value="byPopulation">Par population</option>
                     </select>
                 </label>
-                <label for="">
-                    <input type="search" name="" id="">
+                <label class="searchPlanets">
+                    <input type="search" name="searchPlanets" id="searchPlanets" value="Faites votre recherche">
                 </label>
                 <div class="planet_list_container">
                     <ul class="planet_list">
@@ -63,7 +63,19 @@
             
         </section>
         <section class="show_infos_container">
-            <h1>Selectionner le contenu à afficher ! </h1>
+            <h1 class="show_infos_h1">Selectionner le contenu à afficher ! </h1>
+            <div class="show_infos_planet_container">
+                <div class="show_infos_planet">
+                    <h1></h1>
+                    <div class="infos_planet">
+                        <img src="" alt="">
+                        <div class="infos_planet_description">
+                            <h2>Diamètre</h2>
+                            <p class="infos_planet_description_text">a</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
         <script src="./planet.js"></script>
