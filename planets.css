@@ -127,17 +127,28 @@
 
 .infos_planet_container {
     display: flex;
-    gap: 300px;
+    gap: 35%;
     margin-top: 70px;
     
 }
 
 .infos_planet {
    display: flex;
-
+   width: 20%;
+   align-items: center;
+   gap: 15px;
 }
-.infos_planet_description {
 
+.infos_planet img {
+    width: 50px;
+    filter: invert(54%) sepia(50%) saturate(334%) hue-rotate(158deg) brightness(86%) contrast(95%);
+}
+
+
+.infos_planet_description {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .infos_planet_description h2 {
     color: #588dac;
