@@ -4,6 +4,13 @@ const planetResult = document.querySelector('.planet_count')
 const planet = document.querySelector('.planet')
 const titleShowInfos = document.querySelector('.show_infos_h1')
 const ShowInfos = document.querySelector('.show_infos_planet_container')
+const diameter = document.querySelector('.infos_diameter')
+const climate = document.querySelector('.infos_climate')
+const gravity = document.querySelector('.infos_gravity')
+const terrain = document.querySelector('.infos_terrain')
+const population = document.querySelector('.population')
+const namePlanet = document.querySelector(".planetName")
+
 
 async function getData(url) {
     const response = await fetch(url);
@@ -12,8 +19,8 @@ async function getData(url) {
 }
 
 async function displayPlanet() {
+    const data = await getData('https://swapi.dev/api/planets');
     try {
-        const data = await getData('https://swapi.dev/api/planets');
         if (Array.isArray(data.results)) { 
             data.results.forEach(planet => { 
                 const planetListItem = document.createElement('li');
@@ -44,9 +51,9 @@ async function showPlanetInfos(){
 
 
 document.body.addEventListener('click', async function (event) {
+    const data = await getData('https://swapi.dev/api/planets');
     if (event.target.classList.contains('planet')) {
         const planetNameElement = event.target.firstElementChild;
-        const data = await getData('https://swapi.dev/api/planets');
         if (planetNameElement) {
             const planetName = planetNameElement.textContent;
             console.log(planetName)
@@ -54,10 +61,17 @@ document.body.addEventListener('click', async function (event) {
             if (foundPlanet) {
                 const planetDiameter = foundPlanet.diameter;
                 const planetClimate = foundPlanet.climate;
+                const planetGravity = foundPlanet.gravity;
+                const planetTerrain = foundPlanet.terrain;
+                const planetPopulation = foundPlanet.population;
                 titleShowInfos.style.display = 'none'
-                ShowInfos.style.display = 'flex'
-                console.log(`Diamètre de la planète ${planetName} : ${planetDiameter}`);
-                console.log(`Climat de la planète ${planetName} : ${planetClimate}`);
+                ShowInfos.style.display = 'block'
+                diameter.textContent = planetDiameter
+                climate.textContent = planetClimate
+                gravity.textContent = planetGravity
+                terrain.textContent = planetTerrain
+                population.innerHTML = `<span class="mark">Population : </span>${planetPopulation}`
+                namePlanet.textContent =  planetName
             } else {
                 console.log(`La planète ${planetName} n'a pas été trouvée.`);
             }
@@ -65,5 +79,8 @@ document.body.addEventListener('click', async function (event) {
     }
 });
 
-displayPlanet()
-getCountPage()
+function onInit(){
+    displayPlanet()
+    getCountPage()
+}
+onInit()

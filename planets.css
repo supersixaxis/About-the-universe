@@ -105,29 +105,46 @@
 }
 
 .show_infos_planet_container {
-   display: none;
+    display: none;
 }
 .show_infos_planet {
-
+    margin-left: 20px;
+    
 }
 
 .show_infos_planet h1 {
     color: #588dac;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.show_planet {
-
+.population  {
+    color: white;
+    font-size: 22px;
+    margin-top: 30px;
 }
+
+.infos_planet_container {
+    display: flex;
+    gap: 300px;
+    margin-top: 70px;
+    
+}
+
 .infos_planet {
-   
+   display: flex;
+
 }
 .infos_planet_description {
 
 }
 .infos_planet_description h2 {
     color: #588dac;
+    font-size: 22px;
 }
 
-.infos_planet_description_text {
+.infos_planet_description p  {
     color: white;
+    font-size: 22px;
 }

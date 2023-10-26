@@ -191,7 +191,7 @@ html {
 }
 
 .infos_description h2 {
-    color: #588dac;
+    color: #2795b1f5;
     font-size: 18px;
     margin-bottom: 5px;
 }
@@ -200,6 +200,7 @@ html {
     color:white;
 }
 
+
 .button_container {
     display: flex;
     justify-content: flex-end;
@@ -207,7 +208,7 @@ html {
     margin-right: 30px;
 }
 
-.number_container h1,
+.title,
 .number_container h2,
 .number_container p,
 .number_container button,
