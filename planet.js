@@ -18,9 +18,6 @@ async function getData(url, page = 1) {
     return data;
 }
 
-
-
-
 async function fetchAllPlanets() {
     try {
         let nextPage = "https://swapi.dev/api/planets/";
@@ -65,10 +62,6 @@ async function fetchAndDisplayPlanets() {
         console.error('Une erreur s\'est produite lors du traitement des planètes :', error);
     }
 }
-
-
-
-
 
 async function getCountPage() {
     const countPlanets = allPlanets.length;

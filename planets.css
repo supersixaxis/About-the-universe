@@ -5,6 +5,24 @@
 .blue {
     color: #588dac;
 }
+.logo_blue {
+    filter: invert(54%) sepia(50%) saturate(334%) hue-rotate(158deg) brightness(86%) contrast(95%);
+}
+
+.tab_type2 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    width: 100%;
+    padding: 10px 0px;
+    gap: 5px;
+}
+
+
 
 .planet_container {
     width: 35%;
@@ -79,7 +97,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid white;
-    padding: 10px 0px;
+    padding: 15px 0px;
     cursor: pointer;
 }
 
@@ -114,7 +132,6 @@
 }
 .show_infos_planet {
     margin-left: 20px;
-    
 }
 
 .show_infos_planet h1 {
