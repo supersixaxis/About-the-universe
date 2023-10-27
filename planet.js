@@ -10,7 +10,12 @@ const terrain = document.querySelector('.infos_terrain');
 const population = document.querySelector('.population');
 const namePlanet = document.querySelector(".planetName");
 const sortPopulation = document.querySelector("#sort")
+const loader = document.querySelector('.loader');
+const planetListContainer = document.querySelector('.planet_list_container');
 
+planetListContainer.classList.add('loading');
+planetListContainer.classList.add('loaded');
+loader.style.display = 'block';
 let allPlanets = []; 
 
 async function getData(url, page = 1) {
@@ -45,6 +50,8 @@ async function fetchAllPlanets() {
 function displayPlanetsInHTML() {
     try {
         allPlanets.forEach(planet => {
+            loader.style.display = 'none';
+            planetListContainer.classList.remove('loading');
             const planetListItem = document.createElement('li');
             planetListItem.classList.add('planet');
             planetListItem.innerHTML = `<p>${planet.name}</p><p>${planet.terrain}</p>`;
