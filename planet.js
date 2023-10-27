@@ -12,7 +12,7 @@ const namePlanet = document.querySelector(".planetName");
 const sortPopulation = document.querySelector("#sort")
 const loader = document.querySelector('.loader');
 const planetListContainer = document.querySelector('.planet_list_container');
-
+const searchBar = document.getElementById('searchPlanets');
 planetListContainer.classList.add('loading');
 planetListContainer.classList.add('loaded');
 loader.style.display = 'block';
@@ -49,15 +49,10 @@ async function fetchAllPlanets() {
 
 function displayPlanetsInHTML() {
     try {
-        allPlanets.forEach(planet => {
             loader.style.display = 'none';
             planetListContainer.classList.remove('loading');
-            const planetListItem = document.createElement('li');
-            planetListItem.classList.add('planet');
-            planetListItem.innerHTML = `<p>${planet.name}</p><p>${planet.terrain}</p>`;
-            planetList.appendChild(planetListItem);
+            updatePlanetList(allPlanets)
             getCountPage(allPlanets)
-        });
     } catch (error) {
         console.error('Une erreur s\'est produite lors de l\'affichage des planètes dans le HTML :', error);
     }
@@ -99,46 +94,65 @@ async function showPlanetInfos(event) {
         } 
     }
 }
-
-
-
 document.body.addEventListener('click', showPlanetInfos);
 
-sortPopulation.addEventListener('change', (event) => {
-    let filteredPlanets;
+let currentSearchTerm = '';
+let currentPopulationFilter = '';
 
-    switch (event.target.value) {
+searchBar.addEventListener('input', function() {
+    currentSearchTerm = searchBar.value.toLowerCase();
+    updatePlanetList();
+});
+
+sortPopulation.addEventListener('change', function(event) {
+    currentPopulationFilter = event.target.value;
+    updatePlanetList();
+});
+
+function updatePlanetList() {
+    const searchTerm = currentSearchTerm;
+    const populationFilter = currentPopulationFilter;
+
+    let filteredPlanets = allPlanets;
+    if (searchTerm) {
+        filteredPlanets = filteredPlanets.filter(planet => planet.name.toLowerCase().startsWith(searchTerm));
+    }
+
+    switch (populationFilter) {
         case 'lowPopulation':
-            filteredPlanets = allPlanets.filter(planet => {
+            filteredPlanets = filteredPlanets.filter(planet => {
                 const population = parseInt(planet.population, 10);
                 return population >= 0 && population <= 100000;
             });
             break;
         case 'mediumPopulation':
-            filteredPlanets = allPlanets.filter(planet => {
+            filteredPlanets = filteredPlanets.filter(planet => {
                 const population = parseInt(planet.population, 10);
                 return population >= 100000 && population <= 100000000;
             });
             break;
         case 'bigPopulation':
-            filteredPlanets = allPlanets.filter(planet => {
+            filteredPlanets = filteredPlanets.filter(planet => {
                 const population = parseInt(planet.population, 10);
                 return population >= 100000000;
             });
             break;
-        default:
-            filteredPlanets = allPlanets;
-            break;
     }
+
+    updatePlanetListUI(filteredPlanets);
+};
+
+function updatePlanetListUI(planets) {
     planetList.innerHTML = '';
-    filteredPlanets.forEach(planet => {
+    planets.forEach(planet => {
         const planetListItem = document.createElement('li');
         planetListItem.classList.add('planet');
         planetListItem.innerHTML = `<p>${planet.name}</p><p>${planet.terrain}</p>`;
         planetList.appendChild(planetListItem);
     });
-    getCountPage(filteredPlanets);
-});
+    getCountPage(planets);
+}
+
 
 
 async function onInit() {
